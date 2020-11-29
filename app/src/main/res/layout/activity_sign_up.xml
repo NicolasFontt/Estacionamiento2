@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_nombre"
+            android:id="@+id/text_nombre"
             android:hint="Nombre"
             android:inputType="text"
             android:layout_marginBottom="15dp"
@@ -39,7 +39,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_telefono"
+            android:id="@+id/text_telefono"
             android:hint="Teléfono"
             android:inputType="number"
             android:layout_marginBottom="15dp"
@@ -56,7 +56,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_correo"
+            android:id="@+id/text_correo"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="15dp"
@@ -72,7 +72,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_contrasena"
+            android:id="@+id/text_password"
             android:hint="Contraseña"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
@@ -97,7 +97,8 @@
             android:text="CREAR CUENTA"
             android:textColor="#fff"
             android:textSize="16sp"
-            android:elevation="5dp"/>
+            android:elevation="5dp"
+            android:onClick="crearUsuario"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
@@ -117,6 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Iniciar Sesión"
+                android:onClick="irAInicioSesion"
                 android:id="@+id/btn_ir_inicioSesion"
                 android:background="@android:color/transparent"
                 android:layout_marginLeft="10dp"

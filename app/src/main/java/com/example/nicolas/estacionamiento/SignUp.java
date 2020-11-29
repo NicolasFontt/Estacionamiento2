@@ -5,36 +5,48 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.nicolas.estacionamiento.R;
 
 public class SignUp extends AppCompatActivity {
+    private EditText textCorreo, textPassword, textTelefono, textNombre;
 
-    Button btn_ir_inicioSesion,crear_cuenta;
+    DataBase baseDeDatos;
+    Usuario usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        textCorreo = findViewById(R.id.text_correo);
+        textNombre = findViewById(R.id.text_nombre);
+        textPassword = findViewById(R.id.text_password);
+        textTelefono = findViewById(R.id.text_telefono);
 
-        btn_ir_inicioSesion=findViewById(R.id.btn_ir_inicioSesion);
-        crear_cuenta=findViewById(R.id.crear_cuenta);
+        baseDeDatos = new DataBase(this);
 
+    }
 
+    public void crearUsuario(View view) {
+        usuario = new Usuario();
+        usuario.setNombre(textNombre.getText().toString());
+        usuario.setEmail(textCorreo.getText().toString());
+        usuario.setTelefono(textTelefono.getText().toString());
+        usuario.setPassword(textPassword.getText().toString());
 
-        btn_ir_inicioSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignUp.this,Login.class));
-                finish();
-            }
-        });
+        if( baseDeDatos.nuevoUsuario(usuario) ){
+            Toast.makeText(SignUp.this, "Usuario registrado!", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(SignUp.this,Login.class));
+            finish();
+        } else {
+            Toast.makeText(SignUp.this, "Error al registrar", Toast.LENGTH_LONG).show();
+        }
 
-        crear_cuenta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SignUp.this, "Registrar Usuario", Toast.LENGTH_SHORT).show();
-            }
-        });
+    }
+
+    public void irAInicioSesion(View view) {
+        startActivity(new Intent(SignUp.this,Login.class));
+        finish();
     }
 }
