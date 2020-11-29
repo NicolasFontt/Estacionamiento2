@@ -52,21 +52,6 @@
 
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="414dp"
-        android:layout_height="728dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="MONITOREO"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:typeface="sans"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="184dp"
         android:layout_height="54dp"
