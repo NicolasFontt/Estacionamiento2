@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_nombre"
+            android:id="@+id/text_modelo"
             android:hint="Nombre"
             android:inputType="text"
             android:layout_marginBottom="15dp"
@@ -39,7 +39,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_telefono"
+            android:id="@+id/text_color"
             android:hint="Teléfono"
             android:inputType="number"
             android:layout_marginBottom="15dp"
@@ -56,7 +56,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_correo"
+            android:id="@+id/text_patente"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="15dp"
@@ -72,7 +72,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_password"
+            android:id="@+id/text_fono"
             android:hint="Contraseña"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:id="@+id/crear_cuenta"
+            android:id="@+id/btn_agregarvehiculo"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/btn_fondo_color"

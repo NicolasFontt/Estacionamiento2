@@ -8,9 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.nicolas.estacionamiento.R;
-import com.example.nicolas.estacionamiento.SignUp;
-
 public class Login extends AppCompatActivity {
 
     Button btn_ir_crearCuenta,iniciar_sesion;
@@ -26,8 +23,8 @@ public class Login extends AppCompatActivity {
 
         btn_ir_crearCuenta=findViewById(R.id.btn_ir_crearCuenta);
         iniciar_sesion=findViewById(R.id.iniciar_sesion);
-        textCorreo = (EditText) findViewById(R.id.text_correo);
-        textPassword = (EditText) findViewById(R.id.text_password);
+        textCorreo = (EditText) findViewById(R.id.text_patente);
+        textPassword = (EditText) findViewById(R.id.text_fono);
 
         baseDeDatos = new DataBase(this);
 

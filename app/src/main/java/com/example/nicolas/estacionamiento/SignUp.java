@@ -4,11 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.nicolas.estacionamiento.R;
 
 public class SignUp extends AppCompatActivity {
     private EditText textCorreo, textPassword, textTelefono, textNombre;
@@ -19,10 +16,10 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        textCorreo = findViewById(R.id.text_correo);
-        textNombre = findViewById(R.id.text_nombre);
-        textPassword = findViewById(R.id.text_password);
-        textTelefono = findViewById(R.id.text_telefono);
+        textCorreo = findViewById(R.id.text_patente);
+        textNombre = findViewById(R.id.text_modelo);
+        textPassword = findViewById(R.id.text_fono);
+        textTelefono = findViewById(R.id.text_color);
 
         baseDeDatos = new DataBase(this);
 
