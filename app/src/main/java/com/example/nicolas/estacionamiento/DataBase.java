@@ -62,8 +62,7 @@ public class DataBase {
                 auto.setId(cr.getInt(0));
                 auto.setPatente(cr.getString(1));
                 auto.setSitio(cr.getString(2));
-                auto.setHora_llegada(cr.getString(4));
-//                Log.e("Verbose:", cr.getString(3)+":::"+cr.getString(4));
+                auto.setHora_llegada(cr.getString(3));
                 listaAutos.add(auto);
             } while (cr.moveToNext());
         }
