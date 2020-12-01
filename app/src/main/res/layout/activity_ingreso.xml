@@ -25,39 +25,16 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/text_modelo"
+        <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/input"
-            android:hint="Modelo"
-            android:inputType="text"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:textColor="#fff"
-            android:textColorHint="#ccc" />
-
-        <EditText
-            android:id="@+id/text_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/input"
-            android:hint="Color"
-            android:inputType="number"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:textColor="#fff"
-            android:textColorHint="#ccc" />
+            android:layout_height="63dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Nuevo Vehiculo al estacionamiento"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/text_patente"
@@ -68,7 +45,7 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/input"
             android:hint="Patente"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -77,15 +54,15 @@
             android:textColorHint="#ccc" />
 
         <EditText
-            android:id="@+id/text_fono"
+            android:id="@+id/text_sitio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/input"
-            android:hint="Teléfono"
-            android:inputType="textPassword"
+            android:hint="Sitio"
+            android:inputType="number"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -93,45 +70,37 @@
             android:textColor="#fff"
             android:textColorHint="#ccc" />
 
-        <Button
-            android:id="@+id/btn_crearcuenta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/btn_fondo_color"
-            android:elevation="5dp"
-            android:text="Agregar Vehículo"
-            android:textColor="#fff"
-            android:textSize="16sp" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           >
+
+           <Button
+               android:id="@+id/btn_crearcuenta"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="20dp"
+               android:paddingHorizontal="30dp"
+               android:background="@drawable/btn_fondo_color"
+               android:elevation="5dp"
+               android:onClick="agregarVehiculo"
+               android:text="Agregar Vehículo"
+               android:textColor="#fff"
+               android:textSize="16sp" />
+           <Button
+               android:id="@+id/btn_cancelar"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               android:background="@color/colorAccent"
+               android:elevation="5dp"
+               android:text="Cancelar"
+               android:onClick="cancelar"
+               android:textColor="#fff"
+               android:textSize="16sp" />
+       </LinearLayout>
+
+
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="416dp"
-        android:layout_height="48dp"
-        android:background="#ECE3E3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <TextView
-            android:id="@+id/textView_toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="AGREGAR VEHÍCULO"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-
-    </android.support.v7.widget.Toolbar>
 </android.support.constraint.ConstraintLayout>

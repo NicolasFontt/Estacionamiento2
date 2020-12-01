@@ -16,10 +16,10 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        textCorreo = findViewById(R.id.text_patente);
-        textNombre = findViewById(R.id.text_modelo);
-        textPassword = findViewById(R.id.text_fono);
-        textTelefono = findViewById(R.id.text_color);
+        textCorreo = findViewById(R.id.text_correo);
+        textNombre = findViewById(R.id.text_nombre);
+        textPassword = findViewById(R.id.text_password);
+        textTelefono = findViewById(R.id.text_telefono);
 
         baseDeDatos = new DataBase(this);
 

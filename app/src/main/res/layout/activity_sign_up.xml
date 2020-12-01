@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_modelo"
+            android:id="@+id/text_nombre"
             android:hint="Nombre"
             android:inputType="text"
             android:layout_marginBottom="15dp"
@@ -39,7 +39,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_color"
+            android:id="@+id/text_telefono"
             android:hint="Teléfono"
             android:inputType="number"
             android:layout_marginBottom="15dp"
@@ -56,7 +56,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_patente"
+            android:id="@+id/text_correo"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="15dp"
@@ -72,7 +72,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_fono"
+            android:id="@+id/text_password"
             android:hint="Contraseña"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
