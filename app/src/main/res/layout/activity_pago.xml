@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#d8000000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_ptt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="137dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Patente:"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#ccc"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/txt_patente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_llegada"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Hora de llegada:"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#ccc"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/txt_horallegada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_salida"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Hora de salida:"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#ccc"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/txt_horasalida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_puesto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Puesto de estacionamiento:"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#ccc"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/txt_puestoest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_pago1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/btn_fondo_color"
+            android:elevation="5dp"
+            android:text="PAGAR"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="400dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_tiempo1"
+            android:layout_width="103dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="23dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Tiempo:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txt_vxmin1"
+            android:layout_width="164dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Valor x Minuto:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txt_total"
+            android:layout_width="158dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Total:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="211dp"
+        android:layout_marginTop="500dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_tiempo"
+            android:layout_width="103dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="23dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txt_vxmin"
+            android:layout_width="164dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txt_total1"
+            android:layout_width="158dp"
+            android:layout_height="68dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</RelativeLayout>
