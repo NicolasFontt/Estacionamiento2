@@ -43,13 +43,12 @@ public class Login extends AppCompatActivity {
                 String password = textPassword.getText().toString();
                 Usuario loginValid = baseDeDatos.isLoginValid(correo, password);
                 if(loginValid != null) {
-                    Toast.makeText(Login.this, "Bienvendio!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Bienvenido!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Login.this,Home.class));
                     finish();
                 } else {
                     Toast.makeText(Login.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }

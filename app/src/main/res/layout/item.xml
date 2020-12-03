@@ -2,26 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
         android:orientation="vertical"
+        android:paddingVertical="5dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/titulo_patente"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textSitio"
             android:textSize="15dp"
+            android:textColor="@color/white"
             />
 
         <TextView
@@ -29,6 +33,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textHoraLlegada"
             android:textSize="15dp"
+            android:textColor="@color/white"
             />
 
     </LinearLayout>

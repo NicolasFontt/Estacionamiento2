@@ -1,5 +1,6 @@
 package com.example.nicolas.estacionamiento;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,9 @@ public class ListaAutos extends AppCompatActivity implements AdapterView.OnItemC
     public void onItemClick(AdapterView<?> adapterView, View view, int indice, long l) {
         String id = String.valueOf(autos.get(indice).getId());
         Auto auto = autos.get(indice);
-        Toast.makeText(ListaAutos.this, "Mostrar Auto: " + auto.getPatente(), Toast.LENGTH_LONG).show();
+        Intent i = new Intent(ListaAutos.this, Pago.class);
+        i.putExtra("id_auto", id);
+        startActivity(i);
+
     }
 }

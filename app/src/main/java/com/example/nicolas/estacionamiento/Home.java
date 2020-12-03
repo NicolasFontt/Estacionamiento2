@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Objects;
 
 public class Home extends AppCompatActivity {
     private TextView txt_ocupados;
     DataBase baseDeDatos;
+    int pago_correcto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +24,6 @@ public class Home extends AppCompatActivity {
 
     public void btn_agregar_Vehiculo(View view) {
         startActivity(new Intent(Home.this,IngresoVehiculo.class));
-        finish();
     }
 
     public void verAutosEnElEstacionamiento(View view) {

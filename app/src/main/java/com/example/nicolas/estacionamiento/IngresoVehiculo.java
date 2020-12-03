@@ -6,14 +6,20 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
-public class IngresoVehiculo extends AppCompatActivity {
-    private EditText textSitio, txtPatente;
+public class IngresoVehiculo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private EditText  txtPatente;
     DataBase baseDeDatos;
+    String sitio = "1";
     Auto auto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +27,14 @@ public class IngresoVehiculo extends AppCompatActivity {
         setContentView(R.layout.activity_ingreso);
         baseDeDatos = new DataBase(this);
 
-        textSitio = findViewById(R.id.text_sitio);
+
         txtPatente = findViewById(R.id.text_patente);
 
-//        int cantidad = baseDeDatos.getAutos().size();
-//        Toast.makeText(IngresoVehiculo.this, "Autos:"+cantidad, Toast.LENGTH_LONG).show();
+        Spinner spinner = findViewById(R.id.spinnner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sitios, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
     }
 
     public void cancelar(View view) {
@@ -35,21 +44,42 @@ public class IngresoVehiculo extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void agregarVehiculo(View view) {
-        auto = new Auto();
-        String horaActual =  LocalDateTime.now().toString();
-        int index = horaActual.indexOf('.');
-        String fechaFormateada = horaActual.substring(0, index);
 
-//        Toast.makeText(this, "Hora: " + fechaFormateada, Toast.LENGTH_SHORT).show();
-        auto.setHora_llegada(fechaFormateada);
-        auto.setPatente(txtPatente.getText().toString());
-        auto.setSitio(textSitio.getText().toString());
-
-        if(baseDeDatos.agregarAuto(auto)) {
-           Toast.makeText(IngresoVehiculo.this, "Auto agregado", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(IngresoVehiculo.this,Home.class));
+        if(txtPatente.getText().toString().equals("") || sitio.equals("")) {
+            Toast.makeText(this, "Los campos no pueden ir vacios", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(IngresoVehiculo.this, "Error", Toast.LENGTH_LONG).show();
+            if(baseDeDatos.getSitioUsado(sitio)){
+                Toast.makeText(IngresoVehiculo.this, "Sitio "+ sitio +" usado, elije otro", Toast.LENGTH_LONG).show();
+            } else {
+                auto = new Auto();
+                String horaActual =  LocalDateTime.now().toString();
+                int index = horaActual.indexOf('.');
+                String fechaFormateada = horaActual.substring(0, index);
+
+                auto.setHora_llegada(fechaFormateada);
+                auto.setPatente(txtPatente.getText().toString());
+                auto.setSitio(sitio);
+
+                if(baseDeDatos.agregarAuto(auto)) {
+                    Toast.makeText(IngresoVehiculo.this, "Auto agregado", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(IngresoVehiculo.this,Home.class));
+                } else {
+                    Toast.makeText(IngresoVehiculo.this, "Error", Toast.LENGTH_LONG).show();
+                }
+            }
         }
+
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String text = adapterView.getItemAtPosition(i).toString();
+        sitio = text;
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

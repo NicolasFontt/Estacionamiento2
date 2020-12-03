@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".Pago">
 
     <ImageView
         android:layout_width="match_parent"
@@ -22,9 +22,8 @@
 
         <TextView
             android:id="@+id/text_ptt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="137dp"
             android:layout_marginBottom="15dp"
             android:hint="Patente:"
             android:paddingLeft="20dp"
@@ -33,7 +32,7 @@
             android:paddingBottom="10dp"
             android:textColor="#fff"
             android:textColorHint="#ccc"
-            android:textSize="18sp" />
+            android:textSize="25dp" />
 
 
         <TextView
@@ -43,13 +42,12 @@
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/text_llegada"
-            android:layout_width="169dp"
+            android:id="@+id/titulo_llegada"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="100dp"
             android:layout_marginBottom="15dp"
             android:hint="Hora de llegada:"
             android:paddingLeft="20dp"
@@ -58,49 +56,25 @@
             android:paddingBottom="10dp"
             android:textColor="#fff"
             android:textColorHint="#ccc"
-            android:textSize="18sp" />
+            android:textSize="25dp" />
 
 
         <TextView
-            android:id="@+id/txt_horallegada"
+            android:id="@+id/txt_hora_llegada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:layout_marginBottom="10dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/text_salida"
-            android:layout_width="169dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="15dp"
-            android:hint="Hora de salida:"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:textColor="#fff"
-            android:textColorHint="#ccc"
-            android:textSize="18sp" />
+            android:textSize="22dp" />
 
 
         <TextView
-            android:id="@+id/txt_horasalida"
+            android:id="@+id/titulo_puesto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/text_puesto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="58dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:hint="Puesto de estacionamiento:"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
@@ -108,20 +82,20 @@
             android:paddingBottom="10dp"
             android:textColor="#fff"
             android:textColorHint="#ccc"
-            android:textSize="18sp" />
+            android:textSize="25dp" />
 
 
         <TextView
-            android:id="@+id/txt_puestoest"
+            android:id="@+id/txt_puesto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="25dp" />
 
         <Button
-            android:id="@+id/btn_pago1"
+            android:id="@+id/btn_pago"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -132,6 +106,7 @@
             android:elevation="5dp"
             android:text="PAGAR"
             android:textColor="#fff"
+            android:onClick="pagarEstacionamiento"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -148,7 +123,7 @@
             android:layout_height="58dp"
             android:layout_marginLeft="23dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Tiempo:"
+            android:text="Minutos"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white" />
@@ -159,7 +134,7 @@
             android:layout_height="58dp"
             android:layout_marginLeft="2dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Valor x Minuto:"
+            android:text="Valor x Minuto"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF" />
@@ -170,10 +145,12 @@
             android:layout_height="58dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-medium"
-            android:text="Total:"
+            android:text="Total"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF" />
+
+
 
     </LinearLayout>
 
@@ -189,7 +166,7 @@
             android:layout_height="68dp"
             android:layout_marginLeft="23dp"
             android:fontFamily="sans-serif-medium"
-            android:text="TextView"
+            android:text="45"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF" />
@@ -200,13 +177,13 @@
             android:layout_height="68dp"
             android:layout_marginLeft="2dp"
             android:fontFamily="sans-serif-medium"
-            android:text="TextView"
+            android:text="$50 pesos"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF" />
 
         <TextView
-            android:id="@+id/txt_total1"
+            android:id="@+id/txt_total_pagar"
             android:layout_width="158dp"
             android:layout_height="68dp"
             android:layout_weight="1"

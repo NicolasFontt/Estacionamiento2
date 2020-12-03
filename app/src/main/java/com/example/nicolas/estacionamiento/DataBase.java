@@ -53,9 +53,31 @@ public class DataBase {
         return sql.insert("auto", null, cv) > 0;
     }
 
+    public boolean borrarAutoAlPagar(String id) {
+        return sql.delete("auto", "id = ?", new String[]{id}) > 0;
+    }
+
+    public Auto getAutoPorID(String id) {
+        Cursor cr = sql.rawQuery("select * from auto where id = ?", new String[]{id});
+        if(  cr != null && cr.moveToFirst() ) {
+            Auto auto= new Auto();
+            auto.setId(cr.getInt(0));
+            auto.setPatente(cr.getString(1));
+            auto.setSitio(cr.getString(2));
+            auto.setHora_llegada(cr.getString(3));
+            return auto;
+        }
+        return null;
+    }
+
+    public boolean getSitioUsado(String numeroSitio) {
+        Cursor cr = sql.rawQuery("select * from auto where sitio = ?", new String[]{numeroSitio});
+        return cr != null && cr.moveToFirst();
+    }
+
     public ArrayList<Auto> getAutos() {
         ArrayList<Auto> listaAutos = new ArrayList<>();
-        Cursor cr = sql.rawQuery("select * from auto order by id", null);
+        Cursor cr = sql.rawQuery("select * from auto order by id DESC", null);
         if( cr != null && cr.moveToFirst() ) {
             do {
                 Auto auto = new Auto();
