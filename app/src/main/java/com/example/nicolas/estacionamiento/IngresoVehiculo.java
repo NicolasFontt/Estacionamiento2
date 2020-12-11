@@ -61,7 +61,7 @@ public class IngresoVehiculo extends AppCompatActivity implements AdapterView.On
                 auto.setSitio(sitio);
 
                 if(baseDeDatos.agregarAuto(auto)) {
-                    Toast.makeText(IngresoVehiculo.this, "Auto agregado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(IngresoVehiculo.this, "Ahora puede ingresar", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(IngresoVehiculo.this,Home.class));
                 } else {
                     Toast.makeText(IngresoVehiculo.this, "Error", Toast.LENGTH_LONG).show();

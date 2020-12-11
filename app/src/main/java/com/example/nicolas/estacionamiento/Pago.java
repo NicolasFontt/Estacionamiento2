@@ -46,7 +46,7 @@ public class Pago extends AppCompatActivity {
 
     public void pagarEstacionamiento(View view) {
         if( baseDeDatos.borrarAutoAlPagar(id_auto) ) {
-            Toast.makeText(this,"Pago correcto! ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Pago correcto! Puede salir...", Toast.LENGTH_LONG).show();
             // Aqui realizar algo con el bluetooth
             Intent i = new Intent(Pago.this, Home.class);
             startActivity(i);
